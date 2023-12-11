@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Prediction</title>
+</head>
+<body>
+    <h1>Предсказание цветка</h1>
+    <form method="post" action="/predict">
+        <label for="sepal_length">Длина чашелистика:</label>
+        <input type="text" name="sepal_length" required>
+        <br>
+        <label for="sepal_width">Ширина чашелистика:</label>
+        <input type="text" name="sepal_width" required>
+        <br>
+        <label for="petal_length">Длина лепестка:</label>
+        <input type="text" name="petal_length" required>
+        <br>
+        <label for="petal_width">Ширина лепестка:</label>
+        <input type="text" name="petal_width" required>
+        <br>
+        <button type="submit">Предсказать</button>
+    </form>
+
+    {% if prediction_text %}
+        <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
